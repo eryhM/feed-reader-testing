@@ -43,14 +43,13 @@ $(function() {
 		 * in the allFeeds object and ensures it has a name defined
 		 * and that the name is not empty.
 		 */
-
-		 it('should have link names', function() {
+		it('should have link names', function() {
 			for(var i = 0; i < allFeeds.length; i++)
 			{
 				expect(allFeeds[i].name).toBeDefined();
 				expect(allFeeds[i].name.length).not.toBe(0);
 			}
-		 });
+		});
 	});
 
 
@@ -105,10 +104,15 @@ $(function() {
 		 * by the loadFeed function that the content actually changes.
 		 * Remember, loadFeed() is asynchronous.
 		 */
+
+		// Store the first link of the first entry, which we know exist, for later comparison
 		var previousFeed = $('.feed .entry-link:eq(0)').attr('href');
 
 		beforeEach(function(done) {
-			loadFeed(0, function() {
+			// Ensure a second entry in the allFeeds array exists
+			expect(allFeeds[1]).toBeDefined();
+
+			loadFeed(1, function() {
 				done();
 			});
 		});
@@ -116,9 +120,9 @@ $(function() {
 		it('should change the feed list', function(done) {
 			var newFeed = $('.feed .entry-link:eq(0)').attr('href');
 
+			// Compare both entries
 			expect(newFeed).not.toBe(previousFeed);
 			done();
 		});
-
 	});
 }());
