@@ -14,8 +14,8 @@ Alternatively, the tests can be loaded [here](https://eryhM.github.io/feed-reade
 ---
 This feed reader testing uses the following:
 * [Jasmine 2.1.2](https://jasmine.github.io/2.1/introduction)
-* [jQuery 2.1.1](http://jquery.com/download/)
-* [Handlebars 2.0.0](http://handlebarsjs.com/)
+* [jQuery 2.1.1](https://jquery.com/download/)
+* [Handlebars 2.0.0](https://handlebarsjs.com/)
 
 ### License
 ---
