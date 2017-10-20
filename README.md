@@ -19,4 +19,4 @@ This feed reader testing uses the following:
 
 ### License
 ---
-The content of this repository is licensed under the MIT License, available [here](https://eryhM.github.io/feed-reader-testing/blob/master/LICENSE).
+The content of this repository is licensed under the MIT License, available [here](https://github.com/eryhM/feed-reader-testing/blob/master/LICENSE).
