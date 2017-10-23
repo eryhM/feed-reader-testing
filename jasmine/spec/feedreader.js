@@ -106,25 +106,19 @@ $(function() {
 		 * Remember, loadFeed() is asynchronous.
 		 */
 
-		var oldFeed;
+		var oldFeed, newFeed;
 
 		beforeEach(function(done) {
 			loadFeed(0, function() {
-				oldFeed = $('.feed .entry');
-				done();
+				oldFeed = $('.feed .entry').html();
+				loadFeed(1, function() {
+					newFeed = $('.feed .entry').html();
+					done();
+				});
 			});
 		});
 
 		it('should change the feed list', function() {
-			var newFeed;
-
-			expect(allFeeds[1]).toBeDefined();
-
-			loadFeed(1, function() {
-				newFeed = $('.feed .entry');
-			});
-
-			// Compare feeds
 			expect(oldFeed).not.toBe(newFeed);
 		});
 	});
